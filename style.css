@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #fa928d; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .card {
+    position: relative;
+    width: 500px;
+    height: 320px;
+    background-color: #E87A64; 
+    border-radius: 16px;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('JU\ PASTEL\ \(1\).png'); 
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.6s ease;
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    background-color: #E87A64;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card:hover .card__image {
+    opacity: 0;
+  }
+  
+  .card__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  
+  .card__description {
+    font-size: 16px;
+    color: #f4f4f4;
+    line-height: 1.5;
+  }
+  
